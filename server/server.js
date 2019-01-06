@@ -26,6 +26,14 @@ app.post('/user', (req, res) => {
     });
 });
 
+app.get('/user', (req, res) => {
+    User.find().then((users) => {
+        res.send(users);
+    }, (e) => {
+        res.status(404).send(e);
+    });
+});
+
 app.post('/todos', (req, res) => {
     // var todo = new Todo({
     //     text: req.body.text
