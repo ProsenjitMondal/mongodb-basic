@@ -14,6 +14,18 @@ app.get('/', (req, res) => {
     res.send('Welcome to Heroku Mlab');
 });
 
+app.post('/user', (req, res) => {
+    var newUser = new User({
+        email: req.body.email
+    });
+
+    newUser.save().then((user) => {
+        res.send(user);
+    }, (e) => {
+        res.status(400).send(e);
+    });
+});
+
 app.post('/todos', (req, res) => {
     // var todo = new Todo({
     //     text: req.body.text
