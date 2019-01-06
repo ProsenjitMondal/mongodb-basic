@@ -26,7 +26,7 @@ app.post('/user', (req, res) => {
     });
 });
 
-app.get('/user', (req, res) => {
+app.get('/users', (req, res) => {
     User.find().then((users) => {
         res.send(users);
     }, (e) => {
