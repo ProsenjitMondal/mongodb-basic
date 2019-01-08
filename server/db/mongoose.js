@@ -3,8 +3,6 @@ var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
 var env = process.env.NODE_ENV || 'development';
-console.log('env ***** ', env);
-
 if(env === 'development') {
     process.env.PORT = 3000;
     var MONGOGB_URI = 'mongodb://localhost:27017/TodoApp';
