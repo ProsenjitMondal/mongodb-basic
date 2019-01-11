@@ -13,7 +13,7 @@ if(env === 'development') {
     var MONGOGB_URI = 'mongodb://prosenjit:prosenjit007@ds149744.mlab.com:49744/db_node_heroku';
 }
 
-mongoose.connect(MONGOGB_URI, {useNewUrlParser: true});
+mongoose.connect(MONGOGB_URI, {useCreateIndex: true, useNewUrlParser: true});
 
 module.exports = {
     mongoose
